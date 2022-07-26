@@ -64,7 +64,7 @@ Once we have the solution of the backorders predictions we select some of them t
 - Connections between companies were selected randomly to get an additional of 14 connections. 
 - In terms of quantum computing resources this means 29 qubits because each connection means a qubit.
 
-<img src=".Images/SettingTheProblem.png width=800>
+<img src="./Images/SettingTheProblem.png width=800>
 
 # 3. Conclusion and Future Work
 
