@@ -1,6 +1,6 @@
 # Quantum Supply Chain Manager
 
-The quantum supply chain manager is a quantum solution for logistics problems. We use the power of quantum machine learning for product [backorder](https://www.investopedia.com/terms/b/backorder.asp) prediction and quantum optimization for finding the best route to pick those products with high demand to store them in strategic warehouses. With the first technique, our clients can be prepared for increasing the production of their products when they are in high demand. Once we have established a set of products needed during a period of time, we use our second solution, the vehicle routing problem (VRP) solution to find the optimal route for picking these products. This reduces considerably costs associated with logistics, transportation, backorders, and overstocking for our clients. In summary, these solutions will improve business in terms of client satisfaction, backorder and shipping transportation costs.
+The quantum supply chain manager is a quantum solution for logistics problems. We use the power of quantum machine learning for product [backorder](https://www.investopedia.com/terms/b/backorder.asp) prediction and quantum optimization for finding the best route to pick those products with high demand to store them in a strategic warehouse. With the first technique, our clients can be prepared for increasing the production of their products when they are in high demand. Once we have established a set of products needed during a period of time, we use our second solution, the vehicle routing problem (VRP) solution to find the optimal route for picking these products. This reduces considerably costs associated with logistics, transportation, backorders, and overstocking for our clients. In summary, these solutions will improve business in terms of client satisfaction, backorder and shipping transportation costs.
 
 <img src="./Images/QSCM.png" width=900>
 
@@ -36,6 +36,7 @@ The dataset contains 1687861 products of some companies with a portion of 11293 
 
 
 2. Vehicle routing problem solution. 
+2.1 Setting the problem
 
 
 3. Conclusion and Future Work
@@ -53,10 +54,17 @@ The dataset contains 1687861 products of some companies with a portion of 11293 
 
 Once we have the solution of the backorders predictions we select some of them to do an optimization of the best route giving a set of *K* trucks. The cost function associated to this problem is given by:
 
-
 <img src="./Images/CostFunc.png" width=1000>
 
+## 2.1 Setting the problem 
 
+- We take a subset of 10 companies that were predicted to have backorder of some products. 
+- From the warehouse, where we collect all the products, and each company there is always a connection.
+- 3 trucks are chosen to collect the products. 
+- Connections between companies were selected randomly to get an additional of 14 connections. 
+- In terms of quantum computing resources this means 29 qubits because each connection means a qubit.
+
+<img src=".Images/SettingProblem
 # 3. Conclusion and Future Work
 
 We want to improve the restriction in our model time of importing and exporting, tendency of sell it in differente zones of the country.
