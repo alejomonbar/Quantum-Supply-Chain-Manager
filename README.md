@@ -148,8 +148,9 @@ For the case of 15 qubits, the solution includes only QAOA (with 3 layers repeti
 
 # 3. Conclusion and Future Work
 
+## 3.1 General conclusions
 
-# 3.2 Technical conclusions
+## 3.2 Technical conclusions
 
 - The current devices as *ibm_lagos* is still too noisy to get back correct results with real devices for a 7 qubits problem using VQE.
 
