@@ -76,17 +76,19 @@ This is about an order that cannot be fulfilled at a given time because there is
 
 - Once the dataset is selected, 3 ansatz architectures for the QNN are analized multiscale entanglement renormalization ansatz (MERA) [3], tree tensor networks TTN [4], and matrix product state (MPS) [5]. 
 
-- Next, the results of the QNN are compared against a classical neural network.
+- Next, the results of the **QNN was implemented in Pennylane** are compared against a **classical neural network using Tensorflow and Keras**.
+
+-
 
 ## 1.2 The ansatz encoding
 
-For the quantum computing case, the following scheme is generated for each experiment and it has 3 different ansatz based on 3 tensor networks (TN) MERA, TTN, and MPS. With  only 10 variables we designed the **amplitud embedding** an one layer for each TN. The figure below shows the different ansatz choosed for the prediction of backorder.
+For the quantum computing case, the following scheme is generated for each experiment and it has 3 different ansatz based on 3 tensor networks (TN) MERA, TTN, and MPS. With  only 16 variables was designed the **amplitud embedding** an one layer for each TN. The figure below shows the different ansatz choosed for the prediction of backorder.
 
 <img src="./Images/tensor.png" width=800>
 
 ## 1.3 Different ansatz solutions
 
-For the three different ansatzes presented in Sec 1.2, different architectures were tested. For the case of the MERA architecture 5 different architectures were trained, 1 Layer, 2 Layers, 4 Layers, 1 Layer with a standard scaler, and 1 layer with depolarizing noise of 0.2. For the case of MPS and TTN the architectures tested were 1 layer, 2 layers, and 4 layers. The results were compared against a classical neural network with 640 parameters. From all the architectures tested the best result was obtained with MERA and 1 layer.It should be noted that for the unbalanced dataset the metrics to be considered are recall, pressure, F1 score, ROC AUC, instead of accuracy, since there is a larger class with variables than the other, so when looking at the confusion matrix it can be noted that it manages to classify mostly class 1, which has about 18% of the test set.
+Using pthe templates designed in pennylane for the three different ansatzes presented in Sec 1.2, different architectures were tested. For the case of the MERA architecture 5 different architectures were trained, 1 Layer, 2 Layers, 4 Layers, 1 Layer with a standard scaler, and 1 layer with depolarizing noise of 0.2. For the case of MPS and TTN the architectures tested were 1 layer, 2 layers, and 4 layers. The results were compared against a classical neural network with 640 parameters. From all the architectures tested the best result was obtained with MERA and 1 layer.It should be noted that for the unbalanced dataset the metrics to be considered are recall, pressure, F1 score, ROC AUC, instead of accuracy, since there is a larger class with variables than the other, so when looking at the confusion matrix it can be noted that it manages to classify mostly class 1, which has about 18% of the test set.
 
 The metrics the **MERA's architecture with only 10 parameters** outperforms the best result with a **classical neural network with 684 parameters** in almost all the different metrics presented in the table below. Most important, MERA 1 layer is able to reduce false positives which can result in overstocking. Another good point is that even with some noise the 1 layer model is able to give good results in terms of prediction as is shown in the confusion matrices shown below.
 
