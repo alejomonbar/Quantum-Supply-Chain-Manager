@@ -41,12 +41,14 @@ The dataset contains 1687861 products of some companies with a portion of 11293 
 2. Vehicle routing problem solution. **File**: [Sec2_VRP.ipynb](https://github.com/alejomonbar/Quantum-Supply-Chain-Manager/blob/main/Sec2_VRP.ipynb) **Data**:[sol7.npy and sol15_qasm.npy](https://github.com/alejomonbar/Quantum-Supply-Chain-Manager/tree/main/Data)
 
     2.1 Setting the problem 
+    
     2.2 The QUBO representation of the vehicle routing problem 
     
         2.2.1 Classical solution of the QUBO model
+        
         2.2.2 Quantum Solution of the QUBO model
+      
 3. Conclusion and Future Work
-
 
 4. References
 
