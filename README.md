@@ -27,6 +27,10 @@ To show the applicability of our concept, we have used real data of some product
 |**potential_issue** Source issue for part identified |**pieces_past_due** Parts overdue from source |**perf_6_month_avg** Source performance for prior 6 month period |**perf_12_month_avg** Source performance for prior 12 month period |**local_bo_qty** Amount of stock orders overdue|**deck_risk** Part risk flag
 |**oe_constraint** Part risk flag | **ppap_risk** Part risk flag | **stop_auto_buy** Part risk flag | **rev_stop** Part risk flag| **went_on_backorder** – Product actually went on backorder. <font color='green'>This is the target value</font>.
 
+**This dataset has some variables with missing data of 7% and with an unbalance where one class is 81% and the other 19%.** 
+
+Preprocessing and data analysis is applied to identify the best data, eliminate irrelevant data, impute variables and use a set of the main class for the proposed solution.
+
 
 The dataset contains 1687861 products of some companies with a portion of 11293 that went backorder. We take 2000 cases equally distributed between <font color='green'>True</font> and <font color='red'>False</font> backorders from the dataset to do the training of our QNN. Once, we can predict if a product is backorder we select a small dataset of backorder products to make an optimization using the VRP with QAOA and VQE to select the optimal route. The comparison of the VRP results are contrasted with those of [docplex](https://pypi.org/project/docplex/) a classical optimizer. 
 
@@ -68,13 +72,15 @@ This is about an order that cannot be fulfilled at a given time because there is
 
 ## 1.2 The ansatz encoding
 
-For the quantum computing case, the following scheme is generated for each experiment and it has 3 different ansatz based on 3 tensor networks (TN) MERA, TTN, and MPS. With  only 10 variables we designed the amplitud embedding an one layer for each TN. The figure below shows the different ansatz choosed for the prediction of backorder.
+For the quantum computing case, the following scheme is generated for each experiment and it has 3 different ansatz based on 3 tensor networks (TN) MERA, TTN, and MPS. With  only 10 variables we designed the **amplitud embedding** an one layer for each TN. The figure below shows the different ansatz choosed for the prediction of backorder.
 
 <img src="./Images/tensor.png" width=800>
 
 ## 1.3 Different ansatz solutions
 
-For the three different ansatzes presented in Sec 1.2, different architectures were tested. For the case of the MERA architecture 5 different architectures were trained, 1 Layer, 2 Layers, 4 Layers, 1 Layer with a standard scaler, and 1 layer with depolarizing noise of 0.2. For the case of MPS and TTN the architectures tested were 1 layer, 2 layers, and 4 layers. The results were compared against a classical neural network with 640 parameters. From all the architectures tested the best result was obtained with MERA and 1 layer. This architecture outperforms the best result with a classical neural network in almost all the different metrics presented in the table below. Most important, MERA 1 layer is able to reduce false positives which can result in overstocking. Another good point is that even with some noise the 1 layer model is able to give good results in terms of prediction as is shown in the confusion matrices shown below.
+For the three different ansatzes presented in Sec 1.2, different architectures were tested. For the case of the MERA architecture 5 different architectures were trained, 1 Layer, 2 Layers, 4 Layers, 1 Layer with a standard scaler, and 1 layer with depolarizing noise of 0.2. For the case of MPS and TTN the architectures tested were 1 layer, 2 layers, and 4 layers. The results were compared against a classical neural network with 640 parameters. From all the architectures tested the best result was obtained with MERA and 1 layer.It should be noted that for the unbalanced dataset the metrics to be considered are recall, pressure, F1 score, ROC AUC, instead of accuracy, since there is a larger class with variables than the other, so when looking at the confusion matrix it can be noted that it manages to classify mostly class 1, which has about 18% of the test set.
+
+The metrics the **MERA's architecture with only 10 parameters** outperforms the best result with a **classical neural network with 684 parameters** in almost all the different metrics presented in the table below. Most important, MERA 1 layer is able to reduce false positives which can result in overstocking. Another good point is that even with some noise the 1 layer model is able to give good results in terms of prediction as is shown in the confusion matrices shown below.
 
 <img src="./Images/Results-Ansatz.png" width=800>
 
