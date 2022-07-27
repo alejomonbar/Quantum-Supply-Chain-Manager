@@ -38,6 +38,14 @@ The dataset contains 1687861 products of some companies with a portion of 11293 
 
 1. Backorder prediction using a QNN
 
+This part was made with pandas, numpy, tensorflow, keras, pennylane, sklearn dependencies.
+
+Data analysis [Data analysis.ipynb](https://github.com/alejomonbar/Quantum-Supply-Chain-Manager/blob/main/Data%20analysis.ipynb)
+ Classical [Classical_fair.ipynb](https://github.com/alejomonbar/Quantum-Supply-Chain-Manager/blob/main/Classical_fair.ipynb)
+ MERA model [MERA.ipynb](https://github.com/alejomonbar/Quantum-Supply-Chain-Manager/blob/main/quantum_model_MERA_1_layers.ipynb)
+ [MERA,TTN, MPS models](https://github.com/alejomonbar/Quantum-Supply-Chain-Manager/tree/main/quantum%20models)
+[MERA,TTN, MPS solutions](https://github.com/alejomonbar/Quantum-Supply-Chain-Manager/tree/main/quantum%20pred%20test%20results)
+
     1.1 Setting the problem
     
     1.2 The Ansatz encoding
