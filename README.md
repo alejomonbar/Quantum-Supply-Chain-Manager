@@ -149,6 +149,10 @@ For the case of 15 qubits, the solution includes only QAOA (with 3 layers repeti
 # 3. Conclusion and Future Work
 
 ## 3.1 General conclusions
+- We have presented a general solution for the backorder problem in logistics. We can predict when a backorder will occur using quantum neural networks. Once we find the solution we can find the optimal route to collect the products with a high probability of being in backorder.
+Using real devices and increasing the number of qubits in the VRP still give acceptable results even with small number of iterations.
+![image](https://user-images.githubusercontent.com/11268357/181256019-5c507898-df1c-4383-a9db-1fb83eb2b068.png)
+
 
 ## 3.2 Technical conclusions
 
