@@ -35,7 +35,9 @@ The dataset contains 1687861 products of some companies with a portion of 11293 
 1. Backorder prediction using a QNN
 
     1.1 Setting the problem
+    
     1.2 The Ansatz encoding
+    
     1.3 Different ansatz solutions
 
 2. Vehicle routing problem solution. **File**: [Sec2_VRP.ipynb](https://github.com/alejomonbar/Quantum-Supply-Chain-Manager/blob/main/Sec2_VRP.ipynb) **Data**:[sol7.npy and sol15_qasm.npy](https://github.com/alejomonbar/Quantum-Supply-Chain-Manager/tree/main/Data)
