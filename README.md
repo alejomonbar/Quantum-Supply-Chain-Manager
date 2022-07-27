@@ -152,6 +152,8 @@ For the case of 15 qubits, the solution includes only QAOA (with 3 layers repeti
 
 - We have presented a general solution for the backorder problem in logistics. We can predict when a backorder will occur using quantum neural networks. Once we find the solution we can find the optimal route to collect the products with a high probability of being in backorder.
 
+- The quantum neural network developed could outperform a classical one when compared with a small dataset. Additionally, the best QNN only required 10 parameters vs 640 parameters for the classical.
+
 - Using real devices and increasing the number of qubits in the VRP still give acceptable results even with small number of iterations.
 
 
